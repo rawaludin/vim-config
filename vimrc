@@ -30,8 +30,9 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'mattn/emmet-vim'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'lokaltog/vim-easymotion'
 Plug 'tomtom/tcomment_vim'
 
 " ----- Working with Git ----------------------------------------------
@@ -228,4 +229,10 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,php EmmetInstall
 let g:user_emmet_leader_key='<Tab>'
 
-
+" ----- text bubling -----
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
