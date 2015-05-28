@@ -104,8 +104,17 @@ map [ :bp<cr>
 map <silent> <leader>d :bd<cr>
 " switch pane by <space>w arrow
 nnoremap <leader>w <C-W>
-" ----- Plugin-Specific Settings --------------------------------------
 
+
+" ----- On the fly vimrc file editing -----
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+" edit vimrc file by <space>v
+nmap <leader>v :edit $MYVIMRC<CR>
+
+
+" ----- Plugin-Specific Settings --------------------------------------
 
 " ----- altercation/vim-colors-solarized settings -----
 " Toggle this to "light" for light colorscheme
