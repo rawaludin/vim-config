@@ -190,6 +190,9 @@ nmap <silent> <leader>r :CtrlPFunky<CR>
 nmap <silent> <leader>p :FZF<CR>
 command! -bar FZFTags if !empty(tagfiles()) | call fzf#run({'source': "sed '/^\\!/d;s/\t.*//' " . tagfiles()[0] . ' | uniq',      'sink':   'tag',  }) | else | echo 'Preparing tags' | call system('ctags -R') | FZFTag | endif
 " nmap <silent> <leader>r :FZFTags<CR>
+command! FZFMru call fzf#run({'source': v:oldfiles,'sink' : 'e ','options' : '-m',})
+nmap <silent> <leader>u :FZFMru<CR>
+
 
 function! s:buflist()
   redir => ls
