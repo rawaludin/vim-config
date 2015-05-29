@@ -34,6 +34,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'mattn/emmet-vim'
 Plug 'lokaltog/vim-easymotion'
 Plug 'tomtom/tcomment_vim'
+Plug 'qpkorr/vim-bufkill' " better buffer management
 
 " ----- Working with Git ----------------------------------------------
 Plug 'airblade/vim-gitgutter'
@@ -54,7 +55,7 @@ Plug 'jez/vim-superman'
 
 " ---- Extras/Advanced plugins ----------------------------------------
 " Highlight and strip trailing whitespace
-Plug 'ntpeters/vim-better-whitespace'"
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -100,8 +101,10 @@ nmap <silent> <leader>wq :wq<CR>
 map ] :bn<cr>
 " previous buffer by [
 map [ :bp<cr>
-" delete buffer by <space>bd
-map <silent> <leader>d :bd<cr>
+" delete buffer and keep buffer layout by <space>d
+map <silent> <leader>d :BD<cr>
+" close all buffer (but not the pane) by <space>bufdo BD
+map <silent> <leader>D :bufdo BD<CR>
 " switch pane by <space>w arrow
 nnoremap <leader>w <C-W>
 
